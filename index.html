@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="HSN CODE FINDER">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/2gMn5wQ/Untitled-1.png">
+    <meta property="og:description" content="HSN code stands for “Harmonized System of Nomenclature”. This system has been introduced for the systematic classification of goods all over the world.">
+    <meta property="og:image" content="https://adaderanaenglish.s3.amazonaws.com/1710866624-Sri-Lanka-Customs-l.jpg">
+    <meta property="og:url" content="https://hsnfinder.xyz">
+    <title>TIN & W/H FINDER</title>
+    <style>
+      /* Body styles */
+      body {
+        background-color: #212121;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* Container styles */
+      .container {
+        max-width: 800px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+      }
+
+      /* Search box styles */
+      #search-box {
+        background-color: #171717;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        width: calc(100% - 20px);
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+
+      /* Table styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 50px;
+        border-radius: 5px;
+        overflow: hidden;
+        display: none;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      .product-name {
+        font-weight: bold;
+      }
+
+      .category-label {
+        display: none;
+      }
+
+      .no-results {
+        display: none;
+        color: #fff;
+      }
+
+      /* Footer styles */
+      .footer {
+        text-align: center;
+        color: #999;
+        font-size: 14px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
+      .footer a {
+        color: #999;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Bullets for warehouse numbers */
+      .warehouse-numbers {
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 0;
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="search-box" oninput="searchFunction()" placeholder="🔎   ENTER CONSIGNEE NAME / TIN / WAREHOUSE NO" autofocus>
+      <table id="search-results">
+        <thead>
+          <tr>
+            <th>Consignee</th>
+            <th>TIN Number</th>
+            <th>Warehouse Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows -->
+          <tr>
+            <td>EDISON ELECTRICALS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1144156182525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>SLPA DFS - <b>7501121</b>
+                </li>
+                <li>PALALY ARRIVAL - <b>7501302</b>
+                </li>
+                <li>PALALY DEPARTURE - <b>7501303</b>
+                </li>
+                <li>SERVICE BOND - <b>7401172</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>ROYALE ELECTRONICS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1141827452525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>SLPA DFS - <b>7501300</b>
+                </li>
+                <li>HAMBANTOTA - <b>7501293</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>AMF DUTY FREE</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1144513632525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7500965</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>METRO INTERNATIONAL</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1142987192525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501066</b>
+                </li>
+                <li>CFS 5 - <b>7101127</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>MORICH TRADING</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1146083352525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501122</b>
+                </li>
+                <li>CFS 5 - <b>7101127</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>VICTORY SILK STORES</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1040867722525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7500941</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <!-- Add more rows -->
+          <tr>
+            <td>TELCEY SERVICES</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1147100322525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501138</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>AVENTURA HOLDINGS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1747968152525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501144</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>ESWARAN BROTHERS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1141272802525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND (24A) - <b>7500803</b>
+                </li>
+                <li>DFS (20A) - <b>7501332</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>FREE LANKA TRADING</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1040318707000</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7500815</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>INDIKA INTERNATIONAL DUTY FREE</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>762262371252-1</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501059</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>CROWN ELECTRONICS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>4091279917000</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501050</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>PROJECT PROSPECT</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1141861712525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501064</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>S. N JAYASINGHE</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>5229425882525-1</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501009</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>PACIFIC TRADERS</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>5311335872525-1</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501082</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>D. M JEEWAN</td>
+            <td style="text-align: center; padding: 0 10px;">
+              <b>1144007262525</b>
+            </td>
+            <td>
+              <ul class="warehouse-numbers">
+                <li>FEEDER BOND - <b>7501103</b>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="no-results">No matching products found.</p>
+      <footer class="footer"> Made by <a href="https://stanyfernando.blog" target="_blank">Stany Fernando</a>
+      </footer>
+    </div>
+    <script>
+      // Enhanced search functionality
+      function searchFunction() {
+        var input, filter, table, tr, td, i, txtValue, noResultsMessage;
+        input = document.getElementById("search-box");
+        filter = input.value.trim().toUpperCase(); // Convert input to uppercase
+        table = document.getElementById("search-results");
+        tr = table.getElementsByTagName("tr");
+        noResultsMessage = document.querySelector(".no-results");
+        if (filter.length < 3) {
+          table.style.display = "none";
+          noResultsMessage.style.display = "none";
+          return; // Exit function if less than 3 characters
+        }
+        table.style.display = "table"; // Show the table
+        var matchFound = false;
+        for (i = 0; i < tr.length; i++) {
+          var found = false;
+          var tdElements = tr[i].querySelectorAll("td");
+          for (var j = 0; j < tdElements.length; j++) {
+            td = tdElements[j];
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) { // Check if text contains the filter string
+              found = true;
+              break;
+            }
+          }
+          if (found) {
+            tr[i].style.display = "";
+            matchFound = true;
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+        noResultsMessage.style.display = matchFound ? "none" : "block"; // Show or hide no results message
+      }
+    </script>
+  </body>
+</html>
